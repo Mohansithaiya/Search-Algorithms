@@ -19,30 +19,108 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+#program to search the item in a list one by one from start to end to find the match
+#DEVELOPED BY: MOHAN.S
+#REGISTER NO: 212223240094
 
+a=eval(input())
+b=int(input())
+a.sort()
+print(a)
+def linsc(a,b):
+    k=0
+    for i in a:
+        if(b==i):
+           return 1,k
+        else:
+           k+=1
+    return -1,k
+d,k=linsc(a,b)
+if(d==1):
+    print("Element found at index: ",k)
+else:
+    print("Element not found")
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
+# program to find the element in a list using Binary Search
+#DEVELOPED BY: MOHAN.S
+#REGISTER NO: 212223240094
 
 
-
+lst=eval(input())
+n=int(input())
+lst.sort()
+low=0
+high=len(lst)-1
+print(lst)
+def binsc(lst,n,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if(lst[mid]==n):
+            return 1,mid
+        elif(n>lst[mid]):
+            low=mid+1
+        else:
+            high=mid-1
+    return -1,mid
+d,mid=binsc(lst,n,low,high)
+if(d==1):
+    print("Element found at index: ",mid)
+else:
+    print("Element not found")
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
+#program to find the element in a list using Binary Search (recursive Method).
+#DEVELOPED BY: MOHAN.S
+#REGISTER NO: 212223240094
 
-
-
+def binary(lst , n, low, high):
+    if low<=high:
+        mid = low+ (high -low)//2
+        if lst[mid]==n:
+            return mid
+        elif lst[mid]>n:
+            return binary(lst , n, low, mid-1)
+        else:
+             return binary(lst , n , mid+1, high)
+    else:
+        return -1
+lst = eval(input())
+lst.sort()
+n=eval(input())
+result = binary(lst,n,0,len(lst)-1)
+if(result==-1):
+    print(lst)
+    print("Element not found")
+else:
+    print(lst)
+    print("Element found at index: " , result)
 
 
 ```
 ## Sample Input and Output
+```
+i)	#Use a linear search method to match the item in a list.
+exp7(1).png
+```
+
+```
+ii)	# Find the element in a list using Binary Search(Iterative Method).
+exp7(2).png
+
+```
+```
+iii)	# Find the element in a list using Binary Search (recursive Method).
+exp7(3).png
 
 
-
+```
 
 
 
